@@ -14,10 +14,10 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::paginate(5);
+        $recipes = Recipe::paginate(10);
   
         return view('recipes.index',compact('recipes'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1)*10);
     }
 
     /**

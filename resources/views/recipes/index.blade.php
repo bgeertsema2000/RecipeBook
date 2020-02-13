@@ -9,6 +9,7 @@
 
 <table class="table table-bordered">
     <tr>
+        <th>Number</th>
         <th>Name</th>
         <th width="280px">Action</th>
     </tr>
@@ -16,7 +17,6 @@
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $recipe->name }}</td>
-        <td>{{ $recipe->users_id }}</td>
         <td>
             <form action="{{ route('recipes.destroy',$recipe->recipe_id) }}" method="POST">
                 
