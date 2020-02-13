@@ -40,7 +40,10 @@ class RecipeController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'image',
+            'time_to_prepare',
+            'calories'
         ]);
   
         Recipe::create($request->all());

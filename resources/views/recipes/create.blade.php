@@ -36,7 +36,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
-                <textarea class="form-control" style="height:150px" name="description" placeholder="description and ingredients"></textarea>
+                <textarea class="form-control" style="height:150px" name="description" placeholder="Description and ingredients"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Calorie Amount:</strong>
+                <input type="text" name="calories" class="form-control" placeholder="Calories">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Time To Prepare:</strong>
+                <input type="text" name="time_to_prepare" class="form-control" placeholder="Time to prepare the meal">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

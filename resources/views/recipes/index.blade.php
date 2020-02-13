@@ -11,12 +11,16 @@
     <tr>
         <th>Number</th>
         <th>Name</th>
+        <th>Calories</th>
+        <th>Time To Prepare</th>
         <th width="280px">Action</th>
     </tr>
     @foreach ($recipes as $recipe)
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $recipe->name }}</td>
+        <td>{{ $recipe->calories }}</td>
+        <td>{{ $recipe->time_to_prepare }}</td>
         <td>
             <form action="{{ route('recipes.destroy',$recipe->recipe_id) }}" method="POST">
                 

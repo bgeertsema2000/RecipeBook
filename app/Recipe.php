@@ -12,6 +12,9 @@ class Recipe extends Model
     protected $primaryKey = 'recipe_id';
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'image',
+        'time_to_prepare',
+        'calories'
     ];
 }

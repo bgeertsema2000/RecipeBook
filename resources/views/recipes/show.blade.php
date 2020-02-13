@@ -18,11 +18,23 @@
                 {{ $recipe->name }}
             </div>
         </div>
-        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Details:</strong>
-                {{ $recipe->detail }}
+                <strong>Description:</strong>
+                {{ $recipe->description }}
             </div>
-        </div> --}}
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Calories:</strong>
+                {{ $recipe->calories }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Time To Prepare:</strong>
+                {{ $recipe->time_to_prepare }}
+            </div>
+        </div>
     </div>
 @endsection

@@ -7,7 +7,7 @@
         width: 480px;
         margin-bottom: 10%;
         transition: all 0.2s ease-in;
-        background-color: white;
+        /* background-color: white; */
         overflow-y: hidden;
         white-space: nowrap;
     }
@@ -36,10 +36,10 @@
                                 <img src="../media/recipe3.jpg" alt="" style="width:480px;height:270px;"><br>
                                 <div class="info row mx-0">
                                     <div style="margin-right:2%;">&#9200;</div>
-                                    <div>45min</div>
-                                    <div style="margin-left:10%;">680kcal;</div>
+                                    <div>{{ $recipe->time_to_prepare }} min</div>
+                                    <div style="margin-left:10%;">{{$recipe->calories}} kcal;</div>
                                     <span style="margin-left:10%;">&#8902;</span>
-                                    <div style="margin-left:2%;">0</div>
+                                {{-- <div style="margin-left:2%;">{{$recipe->rating}}</div> --}}
                                 </div>
                                 <h5>{{ $recipe->name }}</h5>
                             </div>

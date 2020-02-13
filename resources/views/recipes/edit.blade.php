@@ -34,12 +34,24 @@
                     <input type="text" name="name" value="{{ $recipe->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
-            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
+                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $recipe->description }}</textarea>
                 </div>
-            </div> --}}
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Calories:</strong>
+                    <input type="text" name="name" value="{{ $recipe->calories }}" class="form-control" placeholder="Amount of calories">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Time To Prepare:</strong>
+                    <input type="text" name="name" value="{{ $recipe->time_to_prepare }}" class="form-control" placeholder="Time to prepare the meal">
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
