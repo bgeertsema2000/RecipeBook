@@ -33,4 +33,10 @@ class HomeController extends Controller
         return view('home')->with('recipes', $recipes)
         ->with('i', (request()->input('page', 1) - 1)*10);
     }
+    
+    public function showRecipe(Recipe $recipe){
+        $recipes = Recipe::all();
+        // return view ('show_recipe')->with('recipes', $recipes);
+        return view('show_recipe',compact('recipe'));
+    }
 }

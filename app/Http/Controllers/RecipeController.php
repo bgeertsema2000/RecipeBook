@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
+use App\User;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
@@ -43,7 +44,8 @@ class RecipeController extends Controller
             'description' => 'required',
             'image',
             'time_to_prepare',
-            'calories'
+            'calories',
+            'users_id'
         ]);
   
         Recipe::create($request->all());
