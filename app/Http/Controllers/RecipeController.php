@@ -39,6 +39,10 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
+        $image = $request->file('image');
+        $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
+        $destinationPath = public_path('/media');
+        $image->move($destinationPath, $input['imagename']);
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -47,6 +51,7 @@ class RecipeController extends Controller
             'calories',
             'users_id'
         ]);
+
   
         Recipe::create($request->all());
    
@@ -109,10 +114,7 @@ class RecipeController extends Controller
                         ->with('success','Recipe deleted successfully');
     }
     
-    public function showrecipe($recipe_id){
-
-        $recipe = Recipe::find($recipe_id);
-        
-        return view('recipes.show_recipe', ['recipe' => $recipe]);
+    public function showrecipe(Recipe $recipe){
+        return view('recipes.show_recipe', compact('recipe'));
     }
 }

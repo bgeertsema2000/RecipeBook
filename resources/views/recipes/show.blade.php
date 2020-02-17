@@ -36,5 +36,11 @@
                 {{ $recipe->time_to_prepare }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Time To Prepare:</strong>
+            <img src="../media/{{$recipe->image}}" alt="">
+            </div>
+        </div>
     </div>
 @endsection

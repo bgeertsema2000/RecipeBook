@@ -1,4 +1,4 @@
-@extends('recipes.layout')
+@extends('layouts.app')
  
 @section('content')
 @if ($message = Session::get('success'))
@@ -6,7 +6,7 @@
     <p>{{ $message }}</p>
 </div>
 @endif
-
+<div class="containe-fluid">
 <table class="table table-bordered">
     <tr>
         <th>Number</th>
@@ -40,5 +40,5 @@
 <a class="btn btn-success" href="{{ route('recipes.create') }}">Add New Recipe</a>
 
 {!! $recipes->links() !!}
-
+</div>
 @endsection
