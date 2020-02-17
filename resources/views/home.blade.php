@@ -43,7 +43,8 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<div class="container">
+<div class="container-fluid col-md-10">
+    <h1 style="margin-left:5%;">Your Recipes</h1>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="row">
