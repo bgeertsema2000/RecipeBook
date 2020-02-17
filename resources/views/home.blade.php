@@ -31,6 +31,11 @@
     .row{
         background-color: white !important;
     }
+
+    a, a:link, a:hover{
+        text-decoration: none;
+        color: black;
+    }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script
@@ -43,7 +48,8 @@
         <div class="col-md-12">
             <div class="row">
                 @foreach($recipes as $recipe)
-                    <div class="col-xs-6 py-3 mx-auto recipes">
+                <div class="col-xs-6 py-3 mx-auto recipes">
+                    <a href="/myrecipes/{{ $recipe->recipe_id }}">
                         <div data-aos="fade-up">
                             <img src="../media/recipe3.jpg" alt="" style="width:480px;height:270px;"><br>
                             <div class="info row mx-0">
@@ -57,6 +63,7 @@
                             </div>
                             <h5>{{ $recipe->name }}</h5>
                         </div>
+                    </a>
                      </div>
                     @endforeach
                     </div>    

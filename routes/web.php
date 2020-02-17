@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return redirect('/home');
+    return redirect('/myrecipes');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@get')->name('home');
-Route::get('home/show', 'HomeController@showRecipe')->name('show');
+Route::get('/myrecipes', 'HomeController@index')->name('home');
+Route::get('/myrecipes', 'HomeController@get')->name('home');
+Route::get('/myrecipes/{recipe}', 'RecipeController@showrecipe');
 Route::resource('recipes', 'RecipeController');

@@ -108,4 +108,11 @@ class RecipeController extends Controller
         return redirect()->route('recipes.index')
                         ->with('success','Recipe deleted successfully');
     }
+    
+    public function showrecipe($recipe_id){
+
+        $recipe = Recipe::find($recipe_id);
+        
+        return view('recipes.show_recipe', ['recipe' => $recipe]);
+    }
 }
