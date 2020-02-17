@@ -13,6 +13,7 @@
         <th>Name</th>
         <th>Calories</th>
         <th>Time To Prepare</th>
+        <th>image</th>
         <th width="280px">Action</th>
     </tr>
     @foreach ($recipes as $recipe)
@@ -21,6 +22,7 @@
         <td>{{ $recipe->name }}</td>
         <td>{{ $recipe->calories }}</td>
         <td>{{ $recipe->time_to_prepare }}</td>
+        <td><img src="/media/{{ $recipe->image }}" alt="" style="width:100px; height:40px"></td>
         <td>
             <form action="{{ route('recipes.destroy',$recipe->recipe_id) }}" method="POST">
                 
