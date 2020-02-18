@@ -14,7 +14,7 @@
 
     .info{
         height: 20px;
-        width: 200px;
+        width: 480px;
     }
 
     a, a:link, a:hover{
