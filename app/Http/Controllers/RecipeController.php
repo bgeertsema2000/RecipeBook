@@ -59,7 +59,7 @@ class RecipeController extends Controller
             'for_people' => $request->for_people,
             'user_id' => $request->user_id
         ]);
-//de cursor van deze person is gay --> 
+        
         return redirect()->route('recipes.index')
                         ->with('success','Recipe added successfully.');
     }
