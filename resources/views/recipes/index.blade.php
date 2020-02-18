@@ -20,8 +20,8 @@
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $recipe->name }}</td>
-        <td>{{ $recipe->calories }}</td>
-        <td>{{ $recipe->time_to_prepare }}</td>
+        <td>{{ $recipe->calories }} cal</td>
+        <td>{{ $recipe->time_to_prepare }} min</td>
         {{-- <td><img src="storage/app/{{ $recipe->image }}" alt="" style="width:100px; height:40px"></td> --}}
     <td><img src="storage/{{$recipe->image}}" alt="" style="width:100px; height:40px"></td>
         <td>

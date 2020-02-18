@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class RecipeController extends Controller
 {
@@ -46,7 +44,8 @@ class RecipeController extends Controller
             'image',
             'time_to_prepare',
             'calories',
-            'for_people'
+            'for_people',
+            'user_id'
             ]);
         $path = $request->file('image')->store('public');
         $request->image = $path;
@@ -57,7 +56,8 @@ class RecipeController extends Controller
             'description' => $request->description, 
             'time_to_prepare' => $request->time_to_prepare, 
             'calories' => $request->calories,
-            'for_people' => $request->for_people
+            'for_people' => $request->for_people,
+            'user_id' => $request->user_id
         ]);
 //de cursor van deze person is gay --> 
         return redirect()->route('recipes.index')
@@ -98,22 +98,13 @@ class RecipeController extends Controller
         $request->validate([
             'name' => 'required',
             'description',
-            'image',
             'time_to_prepare',
             'for_people',
-            'calories'
+            'calories',
+            'user_id'
         ]);
   
         $recipe->update($request->all());
-
-        if(empty($recipe->image)){
-            $path = $request->file('image')->store('public');
-            $request->image = $path;
-            
-            Recipe::create([
-                'image' => $path
-            ]);
-        }
   
         return redirect()->route('recipes.index')
                         ->with('success','Recipe updated successfully');

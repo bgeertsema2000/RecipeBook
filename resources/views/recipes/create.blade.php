@@ -42,25 +42,30 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Calorie Amount:</strong>
-                <input type="text" name="calories" class="form-control" placeholder="Calories">
+                <input type="text" name="calories" class="form-control" placeholder="Calories" maxlength="4">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Time To Prepare:</strong>
-                <input type="text" name="time_to_prepare" class="form-control" placeholder="Time to prepare the meal">
+                <input type="text" name="time_to_prepare" class="form-control" placeholder="Time to prepare the meal" maxlength="3">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group"> 
                 <strong>For People:</strong>
-                <input type="text" name="for_people" class="form-control" placeholder="Time to prepare the meal">
+                <input type="text" name="for_people" class="form-control" placeholder="Time to prepare the meal" maxlength="3">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group d-flex flex-column">
                 <strong>Picture of the food:</strong><br>
                 <input type="file" name="image">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group d-flex flex-column">
+                <input type="hidden" name="user_id" value="{{ Auth::id() }}" readonly>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

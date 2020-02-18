@@ -16,6 +16,7 @@ class Recipe extends Model
         'image',
         'time_to_prepare',
         'calories',
-        'for_people'
+        'for_people',
+        'user_id'
     ];
 }

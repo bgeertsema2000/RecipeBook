@@ -21,7 +21,7 @@
 
     .info{
         height: 20px;
-        width: 200px;
+        width: 480px;
     }
 
     .main{
