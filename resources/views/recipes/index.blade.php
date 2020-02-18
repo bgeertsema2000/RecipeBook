@@ -22,7 +22,8 @@
         <td>{{ $recipe->name }}</td>
         <td>{{ $recipe->calories }}</td>
         <td>{{ $recipe->time_to_prepare }}</td>
-        <td><img src="/media/{{ $recipe->image }}" alt="" style="width:100px; height:40px"></td>
+        {{-- <td><img src="storage/app/{{ $recipe->image }}" alt="" style="width:100px; height:40px"></td> --}}
+    <td><img src="storage/{{$recipe->image}}" alt="" style="width:100px; height:40px"></td>
         <td>
             <form action="{{ route('recipes.destroy',$recipe->recipe_id) }}" method="POST">
                 

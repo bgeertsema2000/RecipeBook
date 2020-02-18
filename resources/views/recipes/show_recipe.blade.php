@@ -33,14 +33,15 @@
         <div class="col-md-12">
             <div class="row">
                 <div data-aos="fade-up">
-                    <img src="../media/recipe3.jpg" alt="" style="width:480px;height:270px;"><br>
+                    <img src="{{ asset('storage/'.$recipe->image) }}" alt="" style="width:480px;height:270px;"><br>
                     <div class="info row mx-0">
                         <div style="margin-right:2%;">&#9200;</div>
                         <div>{{ $recipe->time_to_prepare }} min</div>
                         <div style="margin-left:10%;">{{$recipe->calories}} kcal;</div>
                         <div style="margin-left:10%;">&#128100; {{$recipe->for_people}};</div>
                     </div>
-                    <h5>{{ $recipe->name }}</h5>
+                    <h5>{{ $recipe->name }}</h5><br>
+                <p>{!! nl2br(e($recipe->description)) !!}</p>
                 </div>
             </div>
         </div>
