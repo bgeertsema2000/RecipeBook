@@ -29,7 +29,7 @@ class HomeController extends Controller
     }
 
     public function get(){
-        $recipes = Recipe::paginate(10);
+        $recipes = Recipe::paginate(12);
         return view('home')->with('recipes', $recipes)
         ->with('i', (request()->input('page', 1) - 1)*10);
     }

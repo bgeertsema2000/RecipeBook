@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Recipe;
 use Illuminate\Http\Request;
+use File;
 
 class RecipeController extends Controller
 {
@@ -95,17 +96,35 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
+        
         $request->validate([
-            'name' => 'required',
+            'name',
             'description',
             'time_to_prepare',
             'for_people',
             'calories',
-            'user_id'
+            'user_id',
+            'image' => 'required'
+            ]);
+            
+        if(!empty($request->image)){
+            unlink('storage/'.$recipe->image);
+            // $recipe->image->delete();
+        }
+
+        $path = $request->file('image')->store('public');
+        $request->image = $path;
+
+        $recipe->update([
+            'name' => $request->name,  
+            'description' => $request->description, 
+            'time_to_prepare' => $request->time_to_prepare, 
+            'calories' => $request->calories,
+            'for_people' => $request->for_people,
+            'user_id' => $request->user_id,
+            'image' => $path
         ]);
-  
-        $recipe->update($request->all());
-  
+
         return redirect()->route('recipes.index')
                         ->with('success','Recipe updated successfully');
     }
@@ -118,6 +137,10 @@ class RecipeController extends Controller
      */
     public function destroy(Recipe $recipe)
     {
+        if(!empty($recipe->image)){
+            unlink('storage/'.$recipe->image);
+        }
+
         $recipe->delete();
   
         return redirect()->route('recipes.index')

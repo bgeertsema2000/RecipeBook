@@ -26,9 +26,6 @@
     <td><img src="storage/{{$recipe->image}}" alt="" style="width:100px; height:40px"></td>
         <td>
             <form action="{{ route('recipes.destroy',$recipe->recipe_id) }}" method="POST">
-                
-                <a class="btn btn-info" href="{{ route('recipes.show',$recipe->recipe_id) }}">Show</a>
-                
                 <a class="btn btn-primary" href="{{ route('recipes.edit',$recipe->recipe_id) }}">Edit</a>
                 
                 @csrf

@@ -17,7 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/myrecipes', 'HomeController@index')->name('home');
-Route::get('/myrecipes', 'HomeController@get')->name('home');
-Route::get('/myrecipes/{recipe}', 'RecipeController@showrecipe');
-Route::resource('recipes', 'RecipeController');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/myrecipes', 'HomeController@index')->name('home');
+    Route::get('/myrecipes', 'HomeController@get')->name('home');
+    Route::get('/myrecipes/{recipe}', 'RecipeController@showrecipe')->name('myrecipes');
+    Route::resource('recipes', 'RecipeController');
+});
+

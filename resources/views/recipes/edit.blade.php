@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('recipes.update',$recipe->recipe_id) }}" method="POST">
+    <form action="{{ route('recipes.update',$recipe->recipe_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
    
@@ -36,8 +36,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $recipe->description }}</textarea>
+                    <strong>Description:</strong>
+                    <textarea class="form-control" style="height:150px" name="description" placeholder="Detail">{{ $recipe->description }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -55,7 +55,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>For How Many People?:</strong>
-                    <input type="text" name="for_people" value="{{ $recipe->time_to_prepare }}" class="form-control" placeholder="Time to prepare the meal" maxlength="3">
+                    <input type="text" name="for_people" value="{{ $recipe->for_people }}" class="form-control" placeholder="For how many people?" maxlength="3">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group d-flex flex-column">
+                    <strong>Picture of the food:</strong><br>
+                    <input type="file" name="image">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
